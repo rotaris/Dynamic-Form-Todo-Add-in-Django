@@ -109,7 +109,8 @@ $(document).ready(function() {
       // Relabel/rename all the relevant bits
       $(row).children().children().each(function() {
         updateElementIndex(this, prefix, formCount);
-        $(this).val('');
+        if ( $(this).attr('type') == 'text' )
+          $(this).val('');
       });
       
       // Add an event handler for the delete item/form link 
